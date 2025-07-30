@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nodeweb
+  template:
+    metadata:
+      labels:
+        app: nodeweb
+    spec:
+      containers:
+      - name: nodejs-app
+        image: my-nodejs-app:latest
+        imagePullPolicy: Never  # Use local image only
+        ports:
+        - containerPort: 3000

@@ -1,0 +1,8 @@
+nodejs/node_modules/
+nodejs/.dockerignore
+dist/
+.DS_Store
+.env
+.vscode/
+.idea/
+npm-debug.log

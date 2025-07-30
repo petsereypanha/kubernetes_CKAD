@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: nginx-multi-container-app:1.0
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    volumes:
+      - ./nginx/html:/usr/share/nginx/html
+    networks:
+      - web-network
+
+networks:
+  web-network:
+    driver: bridge

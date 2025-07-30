@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodeweb-pod
+spec:
+  containers:
+    - name: nodeweb-pod
+      image: my-nodejs-app:latest
+      imagePullPolicy: Never
+      ports:
+        - name: nodeweb-pod
+          containerPort: 3000
+          protocol: TCP
